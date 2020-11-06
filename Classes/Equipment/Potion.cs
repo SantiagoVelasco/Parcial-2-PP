@@ -5,11 +5,15 @@ using System.Text;
 
 namespace FirstFantasy.Classes.Equipment
 {
-    class Potion : IDescribable
+    public class Potion : Cure
     {
-        public string ShowInformation()
+        public Potion(int healing) : base(healing)
         {
-            return "This is a strange potion";
+        }
+
+        public override string ShowInformation()
+        {
+            return "Potion. Property: Cure. Healing: " + Healing;
         }
     }
 }

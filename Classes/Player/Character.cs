@@ -13,6 +13,7 @@ namespace FirstFantasy.Classes.Player
         private int experience;
         private Races race;
         private Weapon characterweapon;
+        private List<Inventory> inventories;
 
         public enum Races { Dwarf, Elf, Hobbit, Human, Orc };
 
@@ -21,11 +22,13 @@ namespace FirstFantasy.Classes.Player
         public int Experience { get => experience; set => experience = value; }
         public Races Race { get => race; set => race = value; }
         public Weapon Characterweapon { get => characterweapon; set => characterweapon = value; }
+        public List<Inventory> Inventories { get => inventories; set => inventories = value; }
+
 
         public abstract String Taunt();
         public virtual String ShowCharacter()
         {
-            return "Name: " + name + " Level: " + level + " XP: " + experience;
+            return "Name: " + name + " Level: " + level + " XP: " + experience + " Weapon: " + characterweapon.ShowInformation();
         }
 
         public string ShowInformation()
@@ -38,8 +41,20 @@ namespace FirstFantasy.Classes.Player
             this.characterweapon = weapon;
             Random n = new Random();
             int hurt = weapon.Damage;
-            hurt += n.Next(9);
+            hurt += n.Next(1, 9);
             return hurt;
+        }
+
+
+
+        protected string InventoryInformation(List<Inventory> inventories)
+        {
+            string information = "";
+            foreach (Inventory inventory in inventories)
+            {
+                information += inventory.ShowInformation() + "\n";
+            }
+            return information;
         }
     }
 }

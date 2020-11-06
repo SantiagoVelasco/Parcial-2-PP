@@ -10,5 +10,10 @@ namespace FirstFantasy.Classes.Equipment
         public Sword(int damage) : base(damage)
         {
         }
+
+        public override string ShowInformation()
+        {
+            return "Sword. Property: Attack. Damage: "+ Damage;
+        }
     }
 }

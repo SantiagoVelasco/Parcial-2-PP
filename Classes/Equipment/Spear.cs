@@ -1,19 +1,18 @@
-﻿using FirstFantasy.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FirstFantasy.Classes.Equipment
 {
-    public class Axe : Weapon
+    public class Spear : Weapon
     {
-        public Axe(int damage) : base(damage)
+        public Spear(int damage) : base(damage)
         {
         }
 
         public override string ShowInformation()
         {
-            return "Axe. Property: Attack. Damage: " + Damage;
+            return "Spear. Property: Attack. Damage: " + Damage;
         }
     }
 }

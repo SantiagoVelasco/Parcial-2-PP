@@ -1,4 +1,5 @@
 ﻿using FirstFantasy.Classes;
+using FirstFantasy.Classes.Equipment;
 using FirstFantasy.Classes.Player;
 using System;
 using System.Collections.Generic;
@@ -29,50 +30,24 @@ namespace FirstFantasy
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-           // String option = cboxCharacter.Text;
-
             Character myCharacter;
-
-            List<Character> characterList = new List<Character>();
-
-            Cleric cleric = new Cleric();
-            cleric.Name = "David";
-            cleric.Level = 1;
-            cleric.Experience = 0;
-
-            Rouge rouge = new Rouge { Name = "Santiago", Level = 1, Experience = 0 };
-
-            characterList.Add(cleric);
-            characterList.Add(rouge);
-            characterList.Add(new Fighter { Name = "Velasco", Level = 1, Experience = 0 });
-            characterList.Add(new Wizard { Name = "Daza", Level = 20, Experience =100 });
-
-            txtOutput.Text = "";
-
-            foreach(Character c in characterList)
-            {
-                txtOutput.Text += c.ShowCharacter() + "\n";
-            }
-
-
-
-            /*
+            string option = cboxCharacter.Text;
             switch (option)
             {
                 case "Cleric":
-                    myCharacter = new Cleric();
+                    myCharacter = new Cleric {Name= txtName.Text, Experience = 0, Level = 1 };
                     break;
 
                 case "Fighter":
-                    myCharacter = new Fighter();
+                    myCharacter = new Fighter { Name = txtName.Text, Experience = 0, Level = 1 };
                     break;
 
                 case "Rouge":
-                    myCharacter = new Rouge();
+                    myCharacter = new Rouge { Name = txtName.Text, Experience = 0, Level = 1 };
                     break;
 
                 case "Wizard":
-                    myCharacter = new Wizard();
+                    myCharacter = new Wizard { Name = txtName.Text, Experience = 0, Level = 1 };
                     break;
 
                 default:
@@ -81,10 +56,25 @@ namespace FirstFantasy
                     break;
             }
 
-            if (myCharacter != null){
-                txtOutput.Text = myCharacter.Taunt();
+            Random r = new Random();
+            string gun = cboxFstWeapon.Text;
+            switch (gun)
+            {
+                case "Axe":
+                    myCharacter.Characterweapon = new Axe(r.Next(1, 9));
+                    break;
+                case "Spear":
+                    myCharacter.Characterweapon = new Spear(r.Next(1, 9));
+                    break;
+                case "Sword":
+                    myCharacter.Characterweapon = new Sword(r.Next(1, 9));
+                    break;
+                default:
+                    myCharacter.Characterweapon = null;
+                    MessageBox.Show("You MUST select a Weapon");
+                    break;
             }
-            */
+            txtOutput.Text = myCharacter.ShowCharacter();
         }
     }
 }

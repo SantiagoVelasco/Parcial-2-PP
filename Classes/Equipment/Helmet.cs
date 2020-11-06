@@ -1,19 +1,19 @@
-﻿using FirstFantasy.Interfaces;
+﻿using FirstFantasy.Classes.Equipment;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FirstFantasy.Classes.Equipment
 {
-    public class Axe : Weapon
+    public class Helmet : Defense
     {
-        public Axe(int damage) : base(damage)
+        public Helmet(int endurance) : base(endurance)
         {
         }
 
         public override string ShowInformation()
         {
-            return "Axe. Property: Attack. Damage: " + Damage;
+            return "Helmet. Property: Defense. Endurance: " + Endurance;
         }
     }
 }

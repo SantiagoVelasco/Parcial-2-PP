@@ -5,20 +5,16 @@ using System.Text;
 
 namespace FirstFantasy.Classes.Equipment
 {
-    public abstract class Weapon : IDescribable
+    public abstract class Weapon : Inventory
     {
         private int damage;
 
         public int Damage { get => damage; set => damage = value; }
 
+
         public Weapon(int damage)
         {
             this.damage = damage;
-        }
-
-        public string ShowInformation()
-        {
-            return "This is a weapon with " + damage + " damage!";
         }
 
         public string Attack()
