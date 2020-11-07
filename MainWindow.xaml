@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock Name="txtOutput" HorizontalAlignment="Left" Height="298" Margin="506,51,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Background="#FFCEF1EB"/>
+        <TextBlock Name="txtOutput" HorizontalAlignment="Left" Height="298" Margin="522,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="234" Background="#FFCEF1EB"/>
         <ComboBox Name="cboxCharacter" HorizontalAlignment="Left" Margin="153,108,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="" IsSelected="True"/>
             <ComboBoxItem Content="Cleric"/>
@@ -40,11 +40,16 @@
             <ComboBoxItem Content="Shield"/>
         </ComboBox>
         <Label Content="Healing" HorizontalAlignment="Left" Margin="314,160,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="372,162,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox Name="cboxHealing" HorizontalAlignment="Left" Margin="372,162,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="" IsSelected="True"/>
             <ComboBoxItem Content="Elixir"/>
             <ComboBoxItem Content="Potion"/>
         </ComboBox>
+        <Label Name="txtYourCharacter" Visibility="Hidden" Content="Your character" HorizontalAlignment="Left" Margin="580,29,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Name="txtYourInventory" Visibility="Hidden" Content="Your inventory" HorizontalAlignment="Left" Margin="578,157,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBox Name="txtOutputInventory" HorizontalAlignment="Left" Height="176" Margin="522,190,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Background="#FFCEF1EB" BorderBrush="#FFCEF1EB"/>
+        <Button Name="btnSave" Content="Save" Visibility="Hidden" HorizontalAlignment="Left" Margin="372,329,0,0" VerticalAlignment="Top" Width="120" Click="btnSave_Click"/>
+        <Button Name="btnNewCharacter" Content="New character" Visibility="Hidden" HorizontalAlignment="Left" Margin="153,329,0,0" VerticalAlignment="Top" Width="120" Click="btnNewCharacter_Click"/>
 
     </Grid>
 </Window>

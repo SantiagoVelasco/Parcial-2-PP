@@ -45,9 +45,13 @@ namespace FirstFantasy.Classes.Player
             return hurt;
         }
 
+        public void AddInventories(List<Inventory> inventories, Inventory stock)
+        {
+            this.inventories = inventories;
+            inventories.Add(stock);
+        }
 
-
-        protected string InventoryInformation(List<Inventory> inventories)
+        public string InventoryInformation(List<Inventory> inventories)
         {
             string information = "";
             foreach (Inventory inventory in inventories)
