@@ -16,6 +16,10 @@ namespace FirstFantasy.Classes.Player
             this.Name = name;
         }
 
+        public override string SayTypeCharacter()
+        {
+            return "Cleric";
+        }
 
         public override String Taunt()
         {

@@ -11,9 +11,9 @@ namespace FirstFantasy.Classes.Player
             return "By my Lord";
         }
 
-        public override String ShowCharacter()
+        public override string SayTypeCharacter()
         {
-            return "Remember my name " + Name.ToUpper() + " My Power" + Level;
+            return "Fighter";
         }
     }
 }

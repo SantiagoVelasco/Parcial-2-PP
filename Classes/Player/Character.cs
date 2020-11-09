@@ -26,9 +26,12 @@ namespace FirstFantasy.Classes.Player
 
 
         public abstract String Taunt();
+
+        public abstract string SayTypeCharacter();
+
         public virtual String ShowCharacter()
         {
-            return "Name: " + name + " Level: " + level + " XP: " + experience + " Weapon: " + characterweapon.ShowInformation();
+            return "Name: " + name + " Type: " + SayTypeCharacter() + " Level: " + level + " XP: " + experience + " Weapon: " + characterweapon.ShowInformation();
         }
 
         public string ShowInformation()
@@ -38,17 +41,17 @@ namespace FirstFantasy.Classes.Player
 
         public int Attack(Weapon weapon)
         {
-            this.characterweapon = weapon;
             Random n = new Random();
-            int hurt = weapon.Damage;
-            hurt += n.Next(1, 9);
+            int damage = weapon.Damage;
+            int numberrandom = n.Next(1, 9);
+            int hurt = damage + numberrandom;
             return hurt;
         }
 
         public void AddInventories(List<Inventory> inventories, Inventory stock)
         {
-            this.inventories = inventories;
             inventories.Add(stock);
+            this.inventories = inventories;
         }
 
         public string InventoryInformation(List<Inventory> inventories)

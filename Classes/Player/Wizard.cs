@@ -19,5 +19,10 @@ namespace FirstFantasy.Classes.Player
         {
             return "KAAA BUM";
         }
+
+        public override string SayTypeCharacter()
+        {
+            return "Wizard";
+        }
     }
 }
